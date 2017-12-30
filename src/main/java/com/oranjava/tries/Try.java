@@ -11,7 +11,7 @@ import java.util.function.Function;
  *
  * Purpose :
  *  We use the try-catch so much in our code (if not then you should!), but...
- *  The problem with using it becomes visible as it makes your code pretty verbose.
+ *  The problem with using it becomes visible as it makes our code pretty verbose.
  *  It can even be more painful when a code must be wrapped because of potential checked exceptions.
  *
  *  To make your code (way) more readable, you may want to adopt the following suggested pattern instead : try-orElse
@@ -42,7 +42,7 @@ public class Try {
      *      result = divide(dividend, divisor);
      *  } catch (Exception e1) {
      *      try {
-     *          result = conquer(dividend); // The method conquer
+     *          result = conquer(dividend); // The method conquer may also throw a checked exception
      *      } catch (Exception e2) {
      *          // You may want to rethrow as RuntimeException - if the conquer method may throw a checked exception
      *      }

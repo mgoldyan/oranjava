@@ -1,9 +1,10 @@
 # oranjava
 Simple and useful additions to the Java programming language
 
+
 Some quick examples :
 
-1) You may sometimes want to avoid the unnecessary clutter of checked exceptions :
+1) Sometimes you may want to avoid the unnecessary clutter of checked exceptions :
       
         Class<?> stringCls;
         try {
@@ -24,7 +25,7 @@ Now, it can be shortened to a single readable line of code :
            result = divide(dividend, divisor);
        } catch (Exception e1) {
            try {
-               result = conquer(dividend); // The method conquer
+               result = conquer(dividend); // The method conquer may also throw a checked exception
            } catch (Exception e2) {
                // You may want to rethrow as RuntimeException - if the conquer method may throw a checked exception
            }
@@ -32,12 +33,14 @@ Now, it can be shortened to a single readable line of code :
      
 Now it can be shortened to a single readable line of code :
      
-      int result = Try.tryOrElse(() -> divide(dividend, divisor), () -> conquer(dividend));
+      int result = Try.tryOrElse(() -> divide(dividend, divisor), ex -> conquer(dividend));
       
-So 10 lines of code can be replaced with a single readable line of code.
+So here, 10 lines of code can be replaced with a single readable line of code.
 
-Cool, ha?
+
+Cool, right?
 
 Be prepared for more goodies to come :-)
+
 
 Enjoy & tell me what you think
